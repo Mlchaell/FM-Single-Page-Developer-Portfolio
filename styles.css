@@ -1,0 +1,661 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+:root {
+  --black: hsl(0, 0%, 8%);
+  --green: hsl(153, 71%, 59%);
+  --grey: hsl(0, 0%, 14%);
+  --light-grey: hsl(0, 0%, 85%);
+  --white: hsl(0, 0%, 100%);
+
+  --ff-main: "Space Grotesk", sans-serif;
+  --fw-bold: 700;
+  --fw-medium: 500;
+  --fw-reg: 400;
+
+  --site-margin: 1.5rem;
+}
+
+@media only screen and (min-width: 900px) {
+  :root {
+    --site-margin: 5rem;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  :root {
+    --site-margin: 10rem;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  :root {
+    --site-margin: 15rem;
+  }
+}
+
+/* CSS Reset: https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+================
+Main CSS
+================
+*/
+
+html {
+  font-family: var(--ff-main);
+  overflow-x: auto;
+}
+
+body {
+  background-color: var(--black);
+}
+
+/*
+================
+Nav Bar
+================
+*/
+
+.nav {
+  margin-top: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  color: var(--white);
+}
+
+.nav .flex-row {
+  gap: 1rem;
+}
+
+@media only screen and (min-width: 500px) {
+  .nav {
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-inline: var(--site-margin);
+  }
+}
+
+/*
+================
+Background Imgs
+================
+*/
+
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.rings {
+  position: absolute;
+  z-index: -2;
+  top: 8rem;
+  left: clamp(-25rem, -33.939rem + 44.693vw, -20rem);
+}
+
+.rings2 {
+  position: absolute;
+  z-index: -2;
+  top: 82.5rem;
+  top: 65rem;
+  right: -23rem;
+  right: -20rem;
+}
+
+.rings3 {
+  position: absolute;
+
+  bottom: 8rem;
+  left: -25rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .rings3 {
+    bottom: 2rem;
+  }
+}
+
+.circle {
+  position: absolute;
+  z-index: 0;
+  top: 18rem;
+  right: -5rem;
+}
+
+.headshot {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: clamp(4rem, -5.832rem + 49.162vw, 9.5rem);
+  max-width: 12rem;
+}
+
+@media only screen and (min-width: 500px) {
+  .rings {
+    top: 6rem;
+  }
+
+  .headshot {
+    left: unset;
+    right: clamp(0rem, -13.378rem + 42.809vw, 8rem);
+  }
+
+  .headshot img {
+    min-width: clamp(15rem, 6.639rem + 26.756vw, 20rem);
+    max-height: 29rem;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .circle {
+    top: 18rem;
+    right: clamp(18rem, 9rem + 16vw, 24rem);
+    opacity: 50%;
+  }
+
+  .headshot {
+    right: clamp(10rem, 2.5rem + 13.333vw, 15rem);
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .circle {
+    top: 28rem;
+    right: 28rem;
+    opacity: 50%;
+  }
+
+  .headshot {
+    right: 20rem;
+  }
+
+  .headshot img {
+    min-width: 30rem;
+    max-height: 40rem;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .circle {
+    right: 36rem;
+  }
+
+  .headshot {
+    right: 28rem;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .rings {
+    left: -8rem;
+  }
+
+  .circle {
+    top: 28rem;
+    right: 40rem;
+    opacity: 50%;
+  }
+  
+  .headshot {
+    right: 32rem;
+  }
+}
+
+/*
+================
+Header
+================
+*/
+
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  margin-top: 21rem;
+  text-align: center;
+}
+
+@media only screen and (min-width: 500px) {
+  .header {
+    margin-top: 4rem;
+    margin-left: var(--site-margin);
+
+    gap: 1.3rem;
+    align-items: start;
+    text-align: start;
+
+    max-width: clamp(21.125rem, 2.939rem + 58.194vw, 32rem);
+  }
+
+  .header .body-m {
+    max-width: clamp(16rem, -5.426rem + 68.562vw, 28.813rem);
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .header {
+    max-width: clamp(32rem, -10rem + 74.667vw, 60rem);
+  }
+
+  .header .body-m {
+    max-width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .header {
+    gap: 4rem;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .header {
+    max-width: 50rem;
+  }
+}
+
+/*
+================
+Skills
+================
+*/
+
+.skills {
+  display: flex;
+  place-content: center;
+  text-align: center;
+}
+
+@media only screen and (min-width: 800px) {
+  .skills {
+    place-content: unset;
+    text-align: start;
+    margin: var(--site-margin);
+  }
+
+  .skills .grid {
+    grid-template-columns: repeat(2, 1fr);
+  } 
+}
+
+@media only screen and (min-width: 1200px) {
+  .skills .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*
+================
+Projects
+================
+*/
+
+.projects {
+  margin-inline: var(--site-margin);
+}
+
+.projects__header {
+  margin-bottom: 1rem;
+}
+
+.projects .grid-item {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  margin-inline: auto;
+}
+
+@media only screen and (min-width: 1000px) {
+  .img-container {
+    position: relative;
+    display: block;
+  }
+
+  .img-container img {
+    display: block;
+  }
+
+  .img-container:hover::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    background-color: hsl(0, 0%, 8%, 50%);
+  }
+
+  .img-container-links {
+    visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    min-height: 100%;
+    min-width: 100%;
+  }
+
+  .img-container-links a {
+    color: var(--white);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    text-decoration: none;
+
+    border-bottom: 2px solid var(--green);
+  }
+
+  .img-container-links a:hover {
+    color: var(--green);
+  }
+
+  .img-container:hover .img-container-links a {
+    visibility: visible;
+  }
+}
+
+.projects .grid-item .gap {
+  gap: 1rem;
+}
+
+.projects .grid-item .body-m {
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 800px) {
+  .projects .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .projects .grid-item .btn {
+    display: none;
+  }
+}
+
+/*
+================
+Footer
+================
+*/
+
+.footer {
+  margin-top: 3rem;
+  background-color: var(--grey);
+  text-align: center;
+  padding: 2rem var(--site-margin);
+}
+
+.footer .line {
+  margin: 1rem !important;
+}
+
+.footer__form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  margin: 1rem 0;
+}
+
+@media only screen and (min-width: 500px) {
+  .footer__sect1 {
+    max-width: 22.5rem;
+    margin-inline: auto;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .footer__sect1 {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: unset;
+    text-align: start;
+  }
+
+  .footer__sect1 .footer__form,
+  .footer__sect1 .footer__heading {
+    min-width: 50%;
+  }
+}
+
+.footer input,
+.footer textarea {
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  color: var(--white);
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--white);
+}
+
+.footer__form form button {
+  align-self: end;
+}
+
+@media only screen and (min-width: 800px) {
+  .footer__sect2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1rem;
+  }
+}
+
+.footer__sect2 .logo {
+  margin: 1rem 0;
+}
+
+.footer__sect2 .flex-row {
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Errors */
+
+.err-txt {
+  color: #FF6F5B;
+  text-align: end;
+}
+
+.error {
+  color: #FF6F5B !important;
+}
+
+input[type=text].error {
+  border-bottom: 2px solid #FF6F5B;
+}
+
+input[type=email].error {
+  border-bottom: 2px solid #FF6F5B;
+}
+
+textarea.error {
+  border-bottom: 2px solid #FF6F5B;
+}
+
+/*
+================
+Helper Classes
+================
+*/
+
+.flex-row {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.btn {
+  color: var(--white);
+  background-color: transparent;
+  border: none;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btn:hover {
+  color: var(--green);
+}
+
+.underline {
+  /* TODO: Figure out how to remove spacing above line on anchors */
+  border-bottom: 3px solid var(--green);
+}
+
+.line {
+  background-color: var(--light-grey);
+  height: 1px;
+  margin: 3rem var(--site-margin) !important;
+  /* TODO: Figure out why we need the !important */
+  margin-inline: auto;
+}
+
+@media only screen and (min-width: 620px) {
+  .line {
+    margin-top: 10rem !important;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .line {
+    margin-top: 15rem !important;
+  }
+}
+
+.logo {
+  color: var(--white);
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  column-gap: 5rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  .grid {
+    column-gap: 3rem;
+  }
+}
+
+svg {
+  fill: var(--white);
+}
+
+svg:hover {
+  fill: var(--green);
+}
+
+.heading-l {
+  color: var(--white);
+  font-size: clamp(2.5rem, 1.959rem + 2.703vw, 5rem);
+  line-height: clamp(3rem, 2.568rem + 2.162vw, 5rem);
+}
+
+.heading-m {
+  color: var(--white);
+}
+
+.heading-s {
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 800px) {
+  .heading-m {
+    font-size: 3rem;
+    color: var(--white);
+  }
+}
+
+.body-m {
+  color: var(--white);
+  opacity: 75%;;
+}
+
+.hidden {
+  display: none;
+}
